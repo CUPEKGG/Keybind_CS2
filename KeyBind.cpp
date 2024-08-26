@@ -11,6 +11,82 @@
 
 using namespace std;
 
+// Declaração da função RemoveTrayIcon
+void RemoveTrayIcon();
+
+// Função de janela
+LRESULT CALLBACK WindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+{
+    switch (uMsg)
+    {
+        case WM_TRAYICON:
+            if (lParam == WM_RBUTTONDOWN)
+            {
+                HMENU hMenu = CreatePopupMenu();
+                if (hMenu == NULL) {
+                    std::cerr << "Erro ao criar o menu de contexto." << std::endl;
+                    return 0;
+                }
+                AppendMenu(hMenu, MF_STRING, ID_TRAY_EXIT, "Exit");
+
+                POINT pt;
+                GetCursorPos(&pt);
+                SetForegroundWindow(hWnd);
+                TrackPopupMenu(hMenu, TPM_BOTTOMALIGN | TPM_LEFTALIGN, pt.x, pt.y, 0, hWnd, NULL);
+
+                DestroyMenu(hMenu);
+            }
+            break;
+
+        case WM_COMMAND:
+            if (LOWORD(wParam) == ID_TRAY_EXIT)
+            {
+                PostMessage(hWnd, WM_DESTROY, 0, 0);
+            }
+            break;
+
+        case WM_DESTROY:
+            RemoveTrayIcon();
+            PostQuitMessage(0);
+            break;
+
+        default:
+            return DefWindowProc(hWnd, uMsg, wParam, lParam);
+    }
+    return 0;
+}
+
+// Função para adicionar o ícone à bandeja do sistema
+void AddTrayIcon(HWND hWnd, const std::string& iconPath)
+{
+    memset(&nid, 0, sizeof(NOTIFYICONDATA));
+    nid.cbSize = sizeof(NOTIFYICONDATA);
+    nid.hWnd = hWnd;
+    nid.uID = ID_TRAY_APP_ICON;
+    nid.uFlags = NIF_ICON | NIF_MESSAGE | NIF_TIP;
+    nid.uCallbackMessage = WM_TRAYICON;
+
+    // Verifica se o ícone existe antes de carregar
+    if (!PathFileExists(iconPath.c_str())) {
+        std::cerr << "O ícone não foi encontrado no caminho especificado: " << iconPath << std::endl;
+        nid.hIcon = LoadIcon(NULL, IDI_APPLICATION);
+    } else {
+        nid.hIcon = (HICON)LoadImage(NULL, iconPath.c_str(), IMAGE_ICON, 0, 0, LR_LOADFROMFILE | LR_DEFAULTSIZE | LR_SHARED);
+    }
+
+    strcpy_s(nid.szTip, sizeof(nid.szTip), "KeyBind");
+    Shell_NotifyIcon(NIM_ADD, &nid);
+}
+
+// Função para remover o ícone da bandeja do sistema
+void RemoveTrayIcon()
+{
+    if (nid.hIcon) 
+    {
+        Shell_NotifyIcon(NIM_DELETE, &nid);
+        nid.hIcon = NULL; 
+    }
+}
 
 // Função para exibir informações do criador
 void ShowCreatorInfo()
