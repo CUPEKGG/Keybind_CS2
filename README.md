@@ -31,3 +31,5 @@ jumpthrow_macro_key=F1
 jumpthrow_w_macro_key=F2
 jumpthrow_d_macro_key=MOUSE4
 jumpthrow_crouch_macro_key=C
+
+![Counter-strike22024 08 24-18 38 58 01-ezgif com-optimize](https://github.com/user-attachments/assets/affae037-9ead-4588-9339-46cdfff32987)
