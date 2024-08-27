@@ -1,5 +1,7 @@
 # KeyBind_CS2
 
+This is not a cheat
+
 Quick binds for CS2 - antikick - anticheat friend, do not create or modify files in your game, 100% safe. 
 Does not work in leagues like GC and Faceit. 
 
