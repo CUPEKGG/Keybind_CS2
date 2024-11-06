@@ -11,7 +11,7 @@ F2  jumpthrow + W
 MOUSE4  jumpthrow + D
 
 
-Edit your links by entering the CFG in the folder, modifying only the entries with secret letters. 
+Edit your binds by inserting the CFG into the folder, modifying only the entries with capital letters.
 jumpthrow_macro_key=F1 /
 jumpthrow_w_macro_key=F2 /
 jumpthrow_d_macro_key=MOUSE4 
