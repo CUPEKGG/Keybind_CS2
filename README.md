@@ -14,7 +14,9 @@ MOUSE4  jumpthrow + D
 Edit your binds by inserting the CFG into the folder, modifying only the entries with capital letters.
 jumpthrow_macro_key=F1 /
 jumpthrow_w_macro_key=F2 /
-jumpthrow_d_macro_key=MOUSE4 
+jumpthrow_d_macro_key=MOUSE4 /
+F12 on/off /
+F11 Quit
 
 
 ////////PT:BR////////
@@ -26,7 +28,8 @@ keys padrões:
 F1 jumpthrow normal /
 F2  jumpthrow + W /
 MOUSE4  jumpthrow + D /
-
+F12 on/off /
+F11 Quit
 
 Edite suas binds entrando na CFG dento da pasta modifique apenas as entradas com letras maiúsculas.
 
