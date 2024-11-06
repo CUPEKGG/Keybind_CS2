@@ -11,8 +11,9 @@ F2  jumpthrow + W
 MOUSE4  jumpthrow + D
 
 
-Edit your links by entering the CFG in the folder, modifying only the entries with secret letters. jumpthrow_macro_key=F1 
-jumpthrow_w_macro_key=F2 
+Edit your links by entering the CFG in the folder, modifying only the entries with secret letters. 
+jumpthrow_macro_key=F1 /
+jumpthrow_w_macro_key=F2 /
 jumpthrow_d_macro_key=MOUSE4 
 
 
@@ -22,15 +23,15 @@ Binds rápidas para CS2 - antikick - anticheat friend, não cria ou modifica arq
 Não funciona em ligas como GC e Faceit.
 
 keys padrões:
-F1 jumpthrow normal
-F2  jumpthrow + W
-MOUSE4  jumpthrow + D
+F1 jumpthrow normal /
+F2  jumpthrow + W /
+MOUSE4  jumpthrow + D /
 
 
 Edite suas binds entrando na CFG dento da pasta modifique apenas as entradas com letras maiúsculas.
 
-jumpthrow_macro_key=F1
-jumpthrow_w_macro_key=F2
+jumpthrow_macro_key=F1 /
+jumpthrow_w_macro_key=F2 /
 jumpthrow_d_macro_key=MOUSE4
 
 
